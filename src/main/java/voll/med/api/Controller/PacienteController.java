@@ -1,6 +1,7 @@
 package voll.med.api.Controller;
 
 
+import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -19,6 +20,7 @@ public class PacienteController {
     private PacienteRepository repository;
 
     @PostMapping
+    @Transactional
     public void cadastrarPaciente(@RequestBody @Valid DadosCadastroPaciente dados) {
         repository.save(new Paciente(dados));
     }
