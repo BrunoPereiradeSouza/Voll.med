@@ -8,10 +8,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;
 import org.springframework.web.bind.annotation.*;
-import voll.med.api.paciente.DadosCadastroPaciente;
-import voll.med.api.paciente.DadosListagemPaciente;
-import voll.med.api.paciente.Paciente;
-import voll.med.api.paciente.PacienteRepository;
+import voll.med.api.paciente.*;
 
 import java.util.List;
 
@@ -31,5 +28,12 @@ public class PacienteController {
     @GetMapping
     public Page<DadosListagemPaciente> listarPacientes(@PageableDefault(size = 10, sort = {"nome"}) Pageable paginacao) {
         return repository.findAll(paginacao).map(DadosListagemPaciente::new);
+    }
+
+    @PutMapping
+    @Transactional
+    public void atualizarPaciente(@RequestBody @Valid DadosAtualizacaoPaciente dados) {
+        var paciente = repository.getReferenceById(dados.id());
+        paciente.atualizarInformacoes(dados);
     }
 }
