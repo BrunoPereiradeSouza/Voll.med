@@ -1,0 +1,16 @@
+services:
+
+  mysql:
+    ports:
+      - '3306:3306'
+    image: mysql:8.0
+    environment:
+      MYSQL_ROOT_PASSWORD: Robvs9yz100%
+      MYSQL_DATABASE: vollmed_api
+      MYSQL_USER: brunosouza
+      MYSQL_PASSWORD: Robvs9yz100%
+    volumes:
+      - mysql-data:/var/lib/mysql
+
+volumes:
+  mysql-data:
