@@ -10,9 +10,7 @@ import org.springframework.data.web.PageableDefault;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.util.UriComponentsBuilder;
-import voll.med.api.paciente.*;
-
-import java.util.List;
+import voll.med.api.domain.paciente.*;
 
 @RestController
 @RequestMapping("/pacientes")

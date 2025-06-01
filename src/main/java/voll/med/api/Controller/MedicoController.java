@@ -10,9 +10,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.util.UriComponentsBuilder;
-import voll.med.api.medico.*;
-
-import java.util.List;
+import voll.med.api.domain.medico.*;
 
 @RestController
 @RequestMapping("/medicos")

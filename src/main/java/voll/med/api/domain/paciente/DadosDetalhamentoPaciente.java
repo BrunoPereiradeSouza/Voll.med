@@ -1,8 +1,6 @@
-package voll.med.api.paciente;
+package voll.med.api.domain.paciente;
 
-import voll.med.api.endereco.Endereco;
-
-import javax.swing.text.StyledEditorKit;
+import voll.med.api.domain.endereco.Endereco;
 
 public record DadosDetalhamentoPaciente(Long id, String nome, String email, String telefone, String cpf, Endereco endereco, Boolean ativo) {
 
